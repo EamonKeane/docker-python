@@ -479,6 +479,8 @@ RUN pip install flashtext && \
     pip install hpsklearn && \
     pip install git+https://github.com/Kaggle/learntools && \
     pip install ray && \
+    pip install urllib2 && \
+    pip install StringIO && \
     ##### ^^^^ Add new contributions above here
     # clean up pip cache
     rm -rf /root/.cache/pip/*
