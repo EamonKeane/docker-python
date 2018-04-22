@@ -468,6 +468,8 @@ RUN pip install bcolz && \
     # of all non-final lines. Thanks!
     #
     ###########
+ARG JUPYTERHUB_VERSION=0.8
+
 RUN pip install flashtext && \
     pip install marisa-trie && \
     pip install pyemd && \
@@ -480,10 +482,11 @@ RUN pip install flashtext && \
     pip install git+https://github.com/Kaggle/learntools && \
     pip install ray && \
     pip install geotiler && \
+    pip install --no-cache jupyterhub==$JUPYTERHUB_VERSION && \
+    pip install lifetimes && \
     ##### ^^^^ Add new contributions above here
     # clean up pip cache
     rm -rf /root/.cache/pip/*
-
 
 # For Facets
 ENV PYTHONPATH=$PYTHONPATH:/opt/facets/facets_overview/python/
